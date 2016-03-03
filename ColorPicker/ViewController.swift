@@ -32,10 +32,16 @@ class ViewController: UIViewController, ColorPickerDelegate {
     }
     
     func userDidChooseColor(color: UIColor) {
+        let previousColor: UIColor! = self.view.backgroundColor
         self.view.backgroundColor = color
+        let alertController = UIAlertController(title: "Pick color", message: "Do you want keep this color ?", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: {action in self.view.backgroundColor = previousColor}))
         self.dismissViewControllerAnimated(true, completion: nil)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 
 
-}
 
+}
