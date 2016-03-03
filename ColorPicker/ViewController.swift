@@ -19,6 +19,16 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func unwindToMainMenu(sender: UIStoryboardSegue){
+        //switch buttonChoice
+        
+        self.view.backgroundColor = UIColor.redColor()
+        
+        //self.view.backgroundColor = UIColor.blueColor()
+        
+        //self.view.backgroundColor = UIColor.greenColor()
+    }
 
 
 }
