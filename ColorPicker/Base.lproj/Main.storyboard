@@ -24,7 +24,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="uvy-Of-l35" kind="show" id="wiV-Cr-EBL"/>
+                                    <segue destination="uvy-Of-l35" kind="show" identifier="btnPickColor" id="wiV-Cr-EBL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -37,12 +37,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448" y="426"/>
+            <point key="canvasLocation" x="592" y="370"/>
         </scene>
-        <!--View Controller-->
+        <!--Color Picker View Controller-->
         <scene sceneID="RG9-OI-Og7">
             <objects>
-                <viewController id="uvy-Of-l35" sceneMemberID="viewController">
+                <viewController id="uvy-Of-l35" customClass="ColorPickerViewController" customModule="ColorPicker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QPK-Gc-y5S"/>
                         <viewControllerLayoutGuide type="bottom" id="Kns-n7-q0v"/>
@@ -50,11 +50,57 @@
                     <view key="view" contentMode="scaleToFill" id="5v3-qK-c1V">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yg4-nP-zGq">
+                                <rect key="frame" x="220" y="246" width="160" height="107"/>
+                                <state key="normal" image="orange"/>
+                                <connections>
+                                    <action selector="btnSelectColor:" destination="uvy-Of-l35" eventType="touchUpInside" id="fTG-Lq-j6u"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mD-sA-Ur2">
+                                <rect key="frame" x="225" y="427" width="150" height="96"/>
+                                <state key="normal" image="red"/>
+                                <connections>
+                                    <action selector="btnSelectColor:" destination="uvy-Of-l35" eventType="touchUpInside" id="kSy-ri-iY6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHS-EK-gGb">
+                                <rect key="frame" x="225" y="92" width="150" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="BoL-jd-dye"/>
+                                </constraints>
+                                <state key="normal" image="green"/>
+                                <connections>
+                                    <action selector="btnSelectColor:" destination="uvy-Of-l35" eventType="touchUpInside" id="HJi-Io-gcC"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Yg4-nP-zGq" firstAttribute="top" secondItem="tHS-EK-gGb" secondAttribute="bottom" constant="58" id="C4P-ii-Zcl"/>
+                            <constraint firstItem="3mD-sA-Ur2" firstAttribute="top" secondItem="Yg4-nP-zGq" secondAttribute="bottom" constant="74" id="FOg-FW-e7U"/>
+                            <constraint firstItem="tHS-EK-gGb" firstAttribute="leading" secondItem="3mD-sA-Ur2" secondAttribute="leading" id="bc5-UU-0oe"/>
+                            <constraint firstItem="Yg4-nP-zGq" firstAttribute="centerX" secondItem="5v3-qK-c1V" secondAttribute="centerX" id="dJh-Mj-oVy"/>
+                            <constraint firstItem="tHS-EK-gGb" firstAttribute="centerX" secondItem="Yg4-nP-zGq" secondAttribute="centerX" id="iEX-hy-Rxq"/>
+                            <constraint firstItem="tHS-EK-gGb" firstAttribute="trailing" secondItem="3mD-sA-Ur2" secondAttribute="trailing" id="n1e-N4-TXV"/>
+                            <constraint firstItem="Yg4-nP-zGq" firstAttribute="centerY" secondItem="5v3-qK-c1V" secondAttribute="centerY" id="vhZ-xa-bK1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenButton" destination="tHS-EK-gGb" id="InT-qq-fvL"/>
+                        <outlet property="orangeButton" destination="Yg4-nP-zGq" id="wEM-Ce-O1v"/>
+                        <outlet property="redButton" destination="3mD-sA-Ur2" id="QI1-Gu-vkd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8I-DH-JH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="475" y="1109"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="green" width="96" height="96"/>
+        <image name="orange" width="106" height="107"/>
+        <image name="red" width="96" height="96"/>
+    </resources>
 </document>
