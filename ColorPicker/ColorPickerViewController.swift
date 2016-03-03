@@ -15,17 +15,18 @@ class ColorPickerViewController : UIViewController {
     @IBOutlet weak var redButton: UIButton!
     @IBAction func btnSelectColor(sender: UIButton) {
         switch sender{
-        case greenButton: delegate?.userDidChooseColor(color.green)
+        case greenButton: completionHandlers!(color.green)
             
-        case orangeButton: delegate?.userDidChooseColor(color.orange)
+        case orangeButton: completionHandlers!(color.orange)
             
-        case redButton: delegate?.userDidChooseColor(color.red)
+        case redButton: completionHandlers!(color.red)
             
-        default : delegate?.userDidChooseColor(color.defaultColor)
+        default : completionHandlers!(color.defaultColor)
         }
+        
     }
     
-    var delegate:ColorPickerDelegate?
+    var completionHandlers:((UIColor)->())?
     
     struct color {
         static let red = UIColor.redColor()
@@ -36,8 +37,4 @@ class ColorPickerViewController : UIViewController {
         
         static let defaultColor = UIColor.grayColor()
     }
-}
-
-protocol ColorPickerDelegate{
-    func userDidChooseColor(color : UIColor)
 }
