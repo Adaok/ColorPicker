@@ -24,7 +24,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="uvy-Of-l35" kind="show" id="wiV-Cr-EBL"/>
+                                    <segue destination="uvy-Of-l35" kind="show" identifier="" id="wiV-Cr-EBL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -37,12 +37,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448" y="426"/>
+            <point key="canvasLocation" x="470" y="210"/>
         </scene>
-        <!--View Controller-->
+        <!--Color View Controller-->
         <scene sceneID="RG9-OI-Og7">
             <objects>
-                <viewController id="uvy-Of-l35" sceneMemberID="viewController">
+                <viewController id="uvy-Of-l35" customClass="colorViewController" customModule="ColorPicker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QPK-Gc-y5S"/>
                         <viewControllerLayoutGuide type="bottom" id="Kns-n7-q0v"/>
@@ -51,56 +51,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emi-Ty-xQt">
-                                <rect key="frame" x="277" y="285" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Blue">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emi-Ty-xQt">
+                                <rect key="frame" x="247" y="246" width="106" height="107"/>
+                                <state key="normal" image="orange">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cLh-8H-vTN" kind="unwind" unwindAction="unwindToMainMenu:" id="XSX-hY-xio"/>
+                                    <action selector="chooseColor:" destination="uvy-Of-l35" eventType="touchUpInside" id="Ww4-Gc-Rw1"/>
+                                    <segue destination="cLh-8H-vTN" kind="unwind" identifier="mySegue" unwindAction="unwindToMainMenu:" id="XSX-hY-xio"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bC9-yL-Sbf">
-                                <rect key="frame" x="277" y="142" width="46" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bC9-yL-Sbf">
+                                <rect key="frame" x="236" y="109" width="128" height="96"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="py4-ig-xTw"/>
+                                    <constraint firstAttribute="width" constant="128" id="rWP-VT-eE2"/>
                                 </constraints>
-                                <state key="normal" title="Red">
+                                <state key="normal" image="red">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cLh-8H-vTN" kind="unwind" unwindAction="unwindToMainMenu:" id="Wes-yP-wBl"/>
+                                    <action selector="chooseColor:" destination="uvy-Of-l35" eventType="touchUpInside" id="4kT-1N-DVM"/>
+                                    <segue destination="cLh-8H-vTN" kind="unwind" identifier="mySegue" unwindAction="unwindToMainMenu:" id="qEJ-pg-b0f"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpC-cr-mGS">
-                                <rect key="frame" x="277" y="424" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Green">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpC-cr-mGS">
+                                <rect key="frame" x="252" y="391" width="96" height="96"/>
+                                <state key="normal" image="green">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cLh-8H-vTN" kind="unwind" unwindAction="unwindToMainMenu:" id="Z14-Zr-M5l"/>
+                                    <action selector="chooseColor:" destination="uvy-Of-l35" eventType="touchUpInside" id="ISO-6z-cNF"/>
+                                    <segue destination="cLh-8H-vTN" kind="unwind" identifier="mySegue" unwindAction="unwindToMainMenu:" id="Z14-Zr-M5l"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bC9-yL-Sbf" firstAttribute="top" secondItem="QPK-Gc-y5S" secondAttribute="bottom" constant="122" id="6WU-W3-epy"/>
-                            <constraint firstItem="bC9-yL-Sbf" firstAttribute="leading" secondItem="emi-Ty-xQt" secondAttribute="leading" id="AQu-7g-Ewj"/>
-                            <constraint firstItem="rpC-cr-mGS" firstAttribute="leading" secondItem="emi-Ty-xQt" secondAttribute="leading" id="Dvg-VU-oS9"/>
-                            <constraint firstItem="bC9-yL-Sbf" firstAttribute="trailing" secondItem="emi-Ty-xQt" secondAttribute="trailing" id="HnC-XH-JiE"/>
-                            <constraint firstItem="emi-Ty-xQt" firstAttribute="centerX" secondItem="5v3-qK-c1V" secondAttribute="centerX" id="euE-Nm-yfO"/>
-                            <constraint firstItem="emi-Ty-xQt" firstAttribute="centerY" secondItem="5v3-qK-c1V" secondAttribute="centerY" id="gIL-Yh-Tdg"/>
-                            <constraint firstItem="Kns-n7-q0v" firstAttribute="top" secondItem="rpC-cr-mGS" secondAttribute="bottom" constant="146" id="qh6-HX-uFM"/>
-                            <constraint firstItem="rpC-cr-mGS" firstAttribute="trailing" secondItem="emi-Ty-xQt" secondAttribute="trailing" id="zqs-gQ-5fK"/>
+                            <constraint firstItem="rpC-cr-mGS" firstAttribute="centerX" secondItem="emi-Ty-xQt" secondAttribute="centerX" id="0t3-9C-VrY"/>
+                            <constraint firstItem="emi-Ty-xQt" firstAttribute="centerY" secondItem="5v3-qK-c1V" secondAttribute="centerY" id="5vd-Sr-LL9"/>
+                            <constraint firstItem="rpC-cr-mGS" firstAttribute="top" secondItem="emi-Ty-xQt" secondAttribute="bottom" constant="38" id="Cdf-vI-pK1"/>
+                            <constraint firstItem="rpC-cr-mGS" firstAttribute="centerX" secondItem="bC9-yL-Sbf" secondAttribute="centerX" id="M6w-u6-ErS"/>
+                            <constraint firstItem="emi-Ty-xQt" firstAttribute="centerX" secondItem="5v3-qK-c1V" secondAttribute="centerX" id="Vv5-Ql-ekj"/>
+                            <constraint firstItem="emi-Ty-xQt" firstAttribute="top" secondItem="bC9-yL-Sbf" secondAttribute="bottom" constant="41" id="pgg-Dy-n1R"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenButton" destination="rpC-cr-mGS" id="bU4-4z-FUs"/>
+                        <outlet property="orangeButton" destination="emi-Ty-xQt" id="08o-jH-TI2"/>
+                        <outlet property="redButton" destination="bC9-yL-Sbf" id="TH8-oW-lcm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8I-DH-JH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="cLh-8H-vTN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
+            <point key="canvasLocation" x="452" y="957"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="green" width="96" height="96"/>
+        <image name="orange" width="106" height="107"/>
+        <image name="red" width="96" height="96"/>
+    </resources>
 </document>

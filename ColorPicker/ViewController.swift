@@ -21,15 +21,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func unwindToMainMenu(sender: UIStoryboardSegue){
-        //switch buttonChoice
         
-        self.view.backgroundColor = UIColor.redColor()
-        
-        //self.view.backgroundColor = UIColor.blueColor()
-        
-        //self.view.backgroundColor = UIColor.greenColor()
+        if(sender.identifier != nil){
+            if(sender.identifier == "mySegue"){
+                let myColorViewController = sender.sourceViewController as! colorViewController
+                
+                self.view.backgroundColor = myColorViewController.selectedColor;
+            }
+        }
     }
-
-
 }
 
